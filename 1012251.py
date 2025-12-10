@@ -10,12 +10,13 @@ st.markdown("""
 <style>
     .stTextArea textarea { font-family: 'Consolas', monospace; }
     div[data-testid="stToolbar"] { visibility: hidden; }
+    div[data-testid="stSidebarContent"] { visibility: hidden; }
     footer { visibility: hidden; }
 </style>
 """, unsafe_allow_html=True)
 
 st.title("1012251")
-st.write("Class Diagram & Questions.")
+st.write("-")
 
 # --- Sidebar: API & Status ---
 with st.sidebar:
@@ -34,13 +35,13 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     st.subheader("Diagram")
-    uploaded_file = st.file_uploader("Add", type=["jpg", "png", "jpeg"])
+    uploaded_file = st.file_uploader("-", type=["jpg", "png", "jpeg"])
     if uploaded_file:
         st.image(uploaded_file, caption="Diagram Context", use_column_width=True)
 
 with col2:
     st.subheader("Text")
-    questions = st.text_area("Text here...", height=400, placeholder="...")
+    questions = st.text_area("-", height=400, placeholder="...")
 
 # --- Execution Logic ---
 if st.button("Start", type="primary", use_container_width=True):
